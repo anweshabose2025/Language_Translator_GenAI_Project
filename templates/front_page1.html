@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>GPT-OSS Gen AI Language Translator 🔁📝</title>
+</head>
+<body>
+    <h1>GPT-OSS Translator 🔁📝</h1>
+    <form method="post" action="/">
+
+        <label for="language">Select the language to translate:</label>
+            <select id="language" name="language">
+                {% for lang in languages %}
+                    <option value="{{ lang }}">{{ lang }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+
+        <label for="text">Enter the text to translate :-</label><br>
+        <input type="text" id="text" name="text" placeholder="Text here"><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+    {% if final_text %}
+    <h3>{{final_text}}</h3>
+    {% endif %}
+</body>
+</html>
